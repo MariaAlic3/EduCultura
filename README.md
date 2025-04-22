@@ -17,16 +17,15 @@ Esta API é ideal para desenvolvedores que desejam criar aplicações voltadas p
 
 **`GET /universidades?cota={tipo}`**
 
- - Retorna uma lista de instituições que adotam políticas de cotas.
+- Retorna uma lista de instituições que adotam políticas de cotas.
 
-| Parâmetro | Tipo   | Obrigatório |  Exemplo             |
+| Parâmetro | Tipo   | Obrigatório | Exemplo             |
 |-----------|--------|-------------|----------------------|
 | `cota`    | string | sim         | `indígena`, `racial` |
 
 🔍 Exemplo:
 
-  GET /universidades?cota=indígena
-
+GET /universidades?cota=indígena
 
 📦 Resposta:
 ```json
@@ -37,21 +36,21 @@ Esta API é ideal para desenvolvedores que desejam criar aplicações voltadas p
     "cotas": ["racial", "social", "indígena"]
   }
 ]
-
-
+```
 
 ### 🧠 Personalidades Negras ou Indígenas
-  **`GET /personalidades?nome={nome}`**
 
- - Busca uma personalidade histórica relevante (busca parcial ou completa).
+**`GET /personalidades?nome={nome}`**
 
-|Parâmetro |  Tipo  | Obrigatório | Exemplo |
-|----------|--------|-------------|---------|
-| nome     |string  |    sim      |  zumbi  |
+- Busca uma personalidade histórica relevante (busca parcial ou completa).
+
+| Parâmetro | Tipo   | Obrigatório | Exemplo |
+|-----------|--------|-------------|---------|
+| `nome`    | string | sim         | zumbi   |
 
 🔍 Exemplo:
 
-   GET /personalidades?nome=zumbi
+GET /personalidades?nome=zumbi
 
 📦 Resposta:
 ```json
@@ -60,21 +59,21 @@ Esta API é ideal para desenvolvedores que desejam criar aplicações voltadas p
   "nome": "Zumbi dos Palmares",
   "descricao": "Líder do Quilombo dos Palmares e símbolo da resistência negra."
 }
-
-
+```
 
 ### 🖼️ Museus e Centros Culturais Gratuitos
-    **`GET /museus?cidade={cidade}`**
 
- - Retorna centros culturais e museus gratuitos em uma cidade específica.
+**`GET /museus?cidade={cidade}`**
 
-|Parâmetro |  Tipo  | Obrigatório |  Exemplo |
-|----------|--------|-------------|----------|
-|cidade    | string |     sim     | Salvador |  
+- Retorna centros culturais e museus gratuitos em uma cidade específica.
+
+| Parâmetro | Tipo   | Obrigatório | Exemplo |
+|-----------|--------|-------------|---------|
+| `cidade`  | string | sim         | Salvador |
 
 🔍 Exemplo:
 
-  GET /museus?cidade=salvador
+GET /museus?cidade=salvador
 
 📦 Resposta:
 ```json
@@ -86,17 +85,17 @@ Esta API é ideal para desenvolvedores que desejam criar aplicações voltadas p
     "gratuito": true
   }
 ]
-
-
+```
 
 ### 🎭 Eventos Culturais Gratuitos
-  **`GET /eventos?cidade={cidade}`**
+
+**`GET /eventos?cidade={cidade}`**
 
 - Retorna eventos culturais gratuitos cadastrados em uma cidade.
 
 | Parâmetro | Tipo   | Obrigatório | Exemplo |
 |-----------|--------|-------------|---------|
-| cidade    | string | sim         | Belém   |
+| `cidade`  | string | sim         | Belém   |
 
 🔍 Exemplo:
 
@@ -112,38 +111,40 @@ GET /eventos?cidade=belém
     "gratuito": true
   }
 ]
-
-
+```
 
 ## 🧪 Testando a API
-1. Execute npm install para instalar dependências
+
+1. Execute `npm install` para instalar dependências
 
 2. Inicie a API com:
- npm run dev
+```bash
+npm run dev
+```
 
 3. Acesse os endpoints via navegador, Insomnia ou Postman:
- Crie uma nova requisição com o método `GET` e a URL 
- `http://localhost:3000`
 
- Por exemplo:
- `http://localhost:3000/eventos?cidade=belém`.
+Crie uma nova requisição com o método `GET` e a URL:  
+`http://localhost:3000`
 
-
+Por exemplo:  
+`http://localhost:3000/eventos?cidade=belém`
 
 ## ⚙️ Tecnologias Utilizadas
-  Node.js
-  Express.js  
-  ECMAScript Modules (import / export)
-  Estrutura MVC
-  Middleware de erro
-  Dados simulados com JSON
+- Node.js  
+- Express.js  
+- ECMAScript Modules (import / export)  
+- Estrutura MVC  
+- Middleware de erro  
+- Dados simulados com JSON  
 
+## 📁 Estrutura de Pastas
 
-
-📁 Estrutura de Pastas
- src/
- ├── controllers/    : Contem os controladores responsáveis pela lógica de negócio.
- ├── routes/         : Define as rotas da API.
- ├── model/          : Contem os dados simulados em formato JSON.
- ├── middleware/     : Contem middlewares personalizados, como tratamento de erros.
- server.js           : Arquivo de inicialização do servidor.
+```
+src/
+├── controllers/     : Contém os controladores responsáveis pela lógica de negócio.
+├── routes/          : Define as rotas da API.
+├── model/           : Contém os dados simulados em formato JSON.
+├── middleware/      : Contém middlewares personalizados, como tratamento de erros.
+server.js            : Arquivo de inicialização do servidor.
+```
