@@ -1,4 +1,5 @@
-import express from 'express'
+import express from 'express';
+import cors from 'cors';
 
 import eventosRoutes  from './routes/eventos.routes.js';
 import museusRoutes from './routes/museus.routes.js';
@@ -12,6 +13,14 @@ const PORT = process.env.PORT || 3000;
 // Middleware para interpretar JSON
 app.use(express.json());
 
+// Middleware para permitir CORS
+const allowedOrigin = process.env.FRONTEND_URL || '*';
+
+app.use(cors({
+  origin: allowedOrigin,
+}));
+
+// Rotas
 app.use('/eventos', eventosRoutes);
 app.use('/museus', museusRoutes);
 app.use('/personalidades', personalidadesRoutes);
