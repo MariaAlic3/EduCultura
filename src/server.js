@@ -7,7 +7,7 @@ import universidadesRoutes from './routes/universidades.routes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware para interpretar JSON
 app.use(express.json());
